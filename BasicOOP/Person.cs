@@ -20,18 +20,27 @@ namespace BasicOOP
         //{
 
         //}
-        public Person(string name)
+        //public Person(string name)
+        //{
+        //    Name = name;
+        //}
+
+        public override string ToString()
         {
-            Name = name;
+            return $"This is from {GetType().Name}";
         }
     }
 
     internal class Employee : Person
     {
         public int Salary { get; set; }
-        public Employee(string name, int salary) : base(name)
+        //public Employee(string name, int salary) : base(name)
+        //{
+        //    Salary = salary;
+        //}
+        public override string ToString()
         {
-            Salary = salary;
+            return $"This is salary {Salary}";
         }
 
     }
@@ -39,10 +48,10 @@ namespace BasicOOP
     internal class Admin : Employee
     {
         public string Department { get; set; }
-        public Admin(string name, int salary, string department) : base(name, salary)
-        {
-            Department = department; 
-        }
+        //public Admin(string name, int salary, string department) : base(name, salary)
+        //{
+        //    Department = department; 
+        //}
 
         public override void Do()
         {
