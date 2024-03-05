@@ -18,22 +18,31 @@
             //Console.WriteLine(p.ToString());
             //Console.WriteLine(e.ToString());
             //Console.WriteLine(a.ToString());
-
+            Person person = new Employee();
+            Person person2 = new Person();
             Employee admin = new Admin();
             Person admin2 = new Admin();
             Admin admin3 = new Admin();
+            Dog dog = new Dog(); 
 
-            admin.Do();            
-            admin3.Do();
+            //admin.Do();            
+            //admin3.Do();
+            
 
-            var people = new List<Person>
+            var people = new List<IPerson>
             {
                 admin,
                 admin2,
-                admin3
+                admin3,
+                person,
+                person2,
+                dog
             };
 
-
+            foreach(var p in people)
+            {
+                p.Do(); 
+            }
         }
 
 

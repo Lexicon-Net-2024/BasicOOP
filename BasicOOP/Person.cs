@@ -6,9 +6,28 @@ using System.Threading.Tasks;
 
 namespace BasicOOP
 {
-    internal class Person
+
+    internal interface IPerson
+    {
+        string Name { get; set; }
+        void Do(); 
+    }
+
+    internal class Dog : IPerson
     {
         public string Name { get; set; }
+
+        public void Do()
+        {
+            Console.WriteLine("Dog do");
+        }       
+    }
+    internal class Person : IPerson
+    {
+        public string Name { get; set; }
+
+
+        //public string Name { get; set; }
 
         public virtual void Do()
         {
@@ -41,6 +60,11 @@ namespace BasicOOP
         public override string ToString()
         {
             return $"This is salary {Salary}";
+        }
+
+        public override void Do()
+        {
+            Console.WriteLine("Employee do");
         }
 
     }
