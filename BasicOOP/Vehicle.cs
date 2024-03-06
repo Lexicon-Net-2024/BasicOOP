@@ -8,6 +8,7 @@ namespace BasicOOP
 {
     public interface IDrivable
     {
+
         // public int Gas { get; set; }
         string Drive(int distance);
     }
@@ -21,25 +22,42 @@ namespace BasicOOP
     //}
     internal interface IStopable
     {
-        void Stop(); 
+        void Stop();
     }
-    internal class Vehicle : IDrivable, IStopable
+
+    internal abstract class AbstractVehicle : IDrivable
+    {
+        public virtual string Drive(int distance)
+        {
+            return $"{GetType().Name} drove for {distance}!";
+        }
+
+        public abstract string Turn();
+
+    }
+
+    internal class Vehicle : AbstractVehicle, IStopable
     {
         public string Brand { get; set; }
-        //public int Gas { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
 
         public Vehicle(string brand)
         {
             Brand = brand;
         }
-        public string Drive(int distance)
-        {
-            return $"{GetType().Name} drove for {distance}!";
-        }
+        //public override string Drive(int distance)
+        //{
+        //    return $"{GetType().Name} drove for {distance}!";
+        //}
 
         public void Stop()
         {
             Console.WriteLine($"{GetType().Name} stopped!");
+        }
+
+        public override string Turn()
+        {
+            return "Turning"; 
         }
     }
 
@@ -49,7 +67,7 @@ namespace BasicOOP
         public Car(string brand, string model) : base(brand)
         {
             Model = model;
-        }        
+        }
     }
 
     internal class Volvo : Car
@@ -60,7 +78,7 @@ namespace BasicOOP
 
         public string VolvoSpecialMethod()
         {
-            return "From Volvo"; 
+            return "From Volvo";
         }
     }
     internal class Bicycle : IDrivable
