@@ -54,7 +54,7 @@
             //
             Volvo volvo = new Volvo("Volvo", "V70");
             //Console.WriteLine(volvo.Drive(13));
-            
+
             Bicycle bike = new Bicycle();
 
             var vehicles = new List<IDrivable>
@@ -68,8 +68,34 @@
             foreach (IDrivable vehicle in vehicles)
             {
                 Console.WriteLine(vehicle.Drive(50));
-                
-               
+
+                //Different ways to case value:
+
+
+                //Unsafe casting
+                //Volvo volvo2 = (Volvo)vehicle;
+
+                //Volvo volvo3 = vehicle as Volvo;
+                //Console.WriteLine(volvo3.VolvoSpecialMethod());
+
+                //Volvo volvo4 = vehicle as Volvo;
+                //if(volvo4 != null)
+                //{
+                //    Console.WriteLine(volvo4.VolvoSpecialMethod());
+                //}
+
+                //if (vehicle is Volvo)
+                //{
+                //    Volvo volvo5 = (Volvo)vehicle;
+                //    Console.WriteLine(volvo5.VolvoSpecialMethod());
+                //}
+
+                if(vehicle is Volvo castedToVolvo)
+                {
+                    Console.WriteLine(castedToVolvo.VolvoSpecialMethod());
+                }
+
+
             }
 
 
