@@ -67,6 +67,14 @@ namespace BasicOOP
             Console.WriteLine("Employee do");
         }
 
+        public void AddEmployee(string name, int salary)
+        {
+            if (name is null)
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+        }
+
     }
 
     internal class Admin : Employee

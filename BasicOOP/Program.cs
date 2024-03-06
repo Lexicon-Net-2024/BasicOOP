@@ -4,6 +4,34 @@
     {
         static void Main(string[] args)
         {
+            try
+            {
+                //int.Parse("Test");
+                Employee e = new Employee();
+                e.AddEmployee(null, 25000);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine("Det där var inte så bra!");
+
+            }
+            catch(OverflowException ex)
+            {
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+
+            }
+
+
+           
+
+
             //Person p = new Person("Kalle");
             //Employee e = new Employee("Anna", 25000);
             //Admin a = new Admin("Stefan", 50000, "HR");
