@@ -27,6 +27,8 @@ namespace BasicOOP
 
     internal abstract class AbstractVehicle : IDrivable
     {
+        //Available in derived classes but not from outside.
+        protected bool ProtectedBool; 
         public virtual string Drive(int distance)
         {
             return $"{GetType().Name} drove for {distance}!";
@@ -43,6 +45,7 @@ namespace BasicOOP
 
         public Vehicle(string brand)
         {
+            
             Brand = brand;
         }
         //public override string Drive(int distance)
@@ -61,7 +64,8 @@ namespace BasicOOP
         }
     }
 
-    internal class Car : Vehicle, IStopable, IDrivable
+    //Sealed cannot be derived from
+    internal /*sealed*/ class Car : Vehicle, IStopable, IDrivable
     {
         public string Model { get; set; }
         public Car(string brand, string model) : base(brand)

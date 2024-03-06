@@ -4,6 +4,13 @@
     {
         static void Main(string[] args)
         {
+
+            //Extension-method
+            string name = "Kalle";
+            var res = name.AddString("Anka");
+
+            Console.WriteLine(res);
+
             try
             {
                 //int.Parse("Test");
@@ -75,7 +82,7 @@
             Vehicle v = new Vehicle("Volvo");
             //Console.WriteLine(v.Drive(10));
             //v.Stop();
-
+            
             Car c = new Car("SAAB", "900");
             //Console.WriteLine(c.Drive(15));
             //c.Stop();
