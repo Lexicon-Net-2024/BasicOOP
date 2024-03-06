@@ -18,31 +18,39 @@
             //Console.WriteLine(p.ToString());
             //Console.WriteLine(e.ToString());
             //Console.WriteLine(a.ToString());
-            Person person = new Employee();
-            Person person2 = new Person();
-            Employee admin = new Admin();
-            Person admin2 = new Admin();
-            Admin admin3 = new Admin();
-            Dog dog = new Dog(); 
+            //Person person = new Employee();
+            //Person person2 = new Person();
+            //Employee admin = new Admin();
+            //Person admin2 = new Admin();
+            //Admin admin3 = new Admin();
+            //Dog dog = new Dog(); 
 
-            //admin.Do();            
-            //admin3.Do();
-            
+            ////admin.Do();            
+            ////admin3.Do();
 
-            var people = new List<IPerson>
-            {
-                admin,
-                admin2,
-                admin3,
-                person,
-                person2,
-                dog
-            };
 
-            foreach(var p in people)
-            {
-                p.Do(); 
-            }
+            //var people = new List<IPerson>
+            //{
+            //    admin,
+            //    admin2,
+            //    admin3,
+            //    person,
+            //    person2,
+            //    dog
+            //};
+
+            //foreach(var p in people)
+            //{
+            //    p.Do(); 
+            //}
+
+            Vehicle v = new Vehicle("Volvo");
+            Console.WriteLine(v.Drive(10));
+            v.Stop();
+
+            Car c = new Car("SAAB", "900");
+            Console.WriteLine(c.Drive(15));
+            c.Stop(); 
         }
 
 
