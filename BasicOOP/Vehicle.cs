@@ -51,4 +51,23 @@ namespace BasicOOP
             Model = model;
         }        
     }
+
+    internal class Volvo : Car
+    {
+        public Volvo(string brand, string model) : base(brand, model)
+        {
+        }
+
+        public string VolvoSpecialMethod()
+        {
+            return "From Volvo"; 
+        }
+    }
+    internal class Bicycle : IDrivable
+    {
+        public string Drive(int distance)
+        {
+            return $"{GetType().Name} drove for {distance}!";
+        }
+    }
 }

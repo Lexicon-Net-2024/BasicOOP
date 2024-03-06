@@ -45,12 +45,35 @@
             //}
 
             Vehicle v = new Vehicle("Volvo");
-            Console.WriteLine(v.Drive(10));
-            v.Stop();
+            //Console.WriteLine(v.Drive(10));
+            //v.Stop();
 
             Car c = new Car("SAAB", "900");
-            Console.WriteLine(c.Drive(15));
-            c.Stop(); 
+            //Console.WriteLine(c.Drive(15));
+            //c.Stop();
+            //
+            Volvo volvo = new Volvo("Volvo", "V70");
+            //Console.WriteLine(volvo.Drive(13));
+            
+            Bicycle bike = new Bicycle();
+
+            var vehicles = new List<IDrivable>
+            {
+                v,
+                c,
+                volvo,
+                bike
+            };
+
+            foreach (IDrivable vehicle in vehicles)
+            {
+                Console.WriteLine(vehicle.Drive(50));
+                
+               
+            }
+
+
+
         }
 
 
